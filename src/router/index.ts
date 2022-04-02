@@ -38,6 +38,12 @@ router.beforeEach((to) => {
       return '/login'
     }
   }
+  if (to.path === '/login') {
+    const token = localCatch.getCatch('token')
+    if (token) {
+      return '/main'
+    }
+  }
   if (to.path === '/main') {
     if (firstMenu !== null) {
       return firstMenu.path

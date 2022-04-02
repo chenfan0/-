@@ -141,17 +141,18 @@ module.exports = {
     // new PurgecssPlugin({
     //   paths: glob.sync(`${path.resolve(__dirname, '../src')}/**/*`,  { nodir: true }),
     // }),
-    // new KoaDeployWebpackPlugin({
-    //   ssh: {
-    //     host: '81.71.36.158',
-    //     // host: "121.40.18.63",
-    //     username: 'root',
-    //     password: 'c13005261761F'
-    //   },
-    //   project: {
-    //     path: '/root',
-    //     port: 8080
-    //   }
-    // })
+    new KoaDeployWebpackPlugin({
+      ssh: {
+        host: '81.71.36.158',
+        // host: "121.40.18.63",
+        username: 'root',
+        password: 'c13005261761F'
+      },
+      project: {
+        name: 'cms',
+        path: '/root',
+        port: 8000
+      }
+    })
   ]
 }
